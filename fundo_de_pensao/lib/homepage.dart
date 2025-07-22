@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
             title: Text('Recebimentos', style: TextStyle(color: Colors.white)),
             onTap: () {
               Navigator.pop(context);
+               Navigator.pushNamed(context, '/recebimentos');
             },
           ),
           ListTile(
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
             title: Text('Pagamentos', style: TextStyle(color: Colors.white)),
             onTap: () {
               Navigator.pop(context);
+              Navigator.pushNamed(context, '/pagamentos');
             },
           ),
           ListTile(
@@ -112,7 +114,6 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔵 Ajuda no canto superior direito
             Padding(
               padding: const EdgeInsets.only(top: 8, right: 16),
               child: Align(
@@ -130,7 +131,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 8),
 
-            // 🔽 Espaço entre appbar e conteúdo
+      
             SizedBox(height: 16),
 
             // 🔷 Título
@@ -153,6 +154,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 24),
 
+            //  Cartão Investimentos
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Card(
@@ -207,11 +209,16 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
-                      Icon(Icons.attach_money, color: Colors.indigo, size: 36),
+                      Icon(Icons.receipt_long, color: Colors.indigo, size: 36),
                       SizedBox(width: 12),
-                      Column(
+                        GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/movimentos');
+                        },
+                     child:  Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          
                           Text(
                             'MOVIMENTOS',
                             style: TextStyle(
@@ -225,6 +232,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(fontSize: 13),
                           ),
                         ],
+                      ),
                       ),
                     ],
                   ),

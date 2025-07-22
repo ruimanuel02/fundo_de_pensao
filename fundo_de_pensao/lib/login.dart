@@ -16,14 +16,14 @@ class Login extends StatelessWidget {
           'ENSA',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        toolbarHeight: 40, // 🔹 AppBar mais curta
+        toolbarHeight: 40, 
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // 🔷 Imagem fora do padding e da Column interna
+            
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
